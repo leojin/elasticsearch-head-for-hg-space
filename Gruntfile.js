@@ -4,11 +4,6 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		clean: {
-			_site: {
-				src: ['_site']
-			}
-		},
 		concat: {
 			vendorjs: {
 				src: fileSets.vendorJs,
@@ -111,7 +106,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
 	// Default task(s).
-	grunt.registerTask('default', ['clean', 'concat', 'copy', 'jasmine']);
+	grunt.registerTask('default', ['concat', 'copy', 'jasmine']);
 	grunt.registerTask('server', ['connect:server']);
 	grunt.registerTask('dev', [ 'default', 'watch' ]);
 

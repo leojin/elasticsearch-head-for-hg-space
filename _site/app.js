@@ -3813,8 +3813,7 @@
 			}, {});
 			$("body").empty().append(new app.App("body", { id: "es",
 				base_uri: url,
-			 	auth_user : args["auth_user"] || "",
-			 	auth_password : args["auth_password"] || ""
+			 	auth_token : args["auth_token"] || ""
 			}));
 		},
 
@@ -4390,11 +4389,10 @@
 				// XHR request fails if the URL is not ending with a "/"
 				this.base_uri += "/";
 			}
-			if( this.config.auth_user ) {
-				var credentials = window.btoa( this.config.auth_user + ":" + this.config.auth_password );
+			if( this.config.auth_token ) {
 				$.ajaxSetup({
 					headers: {
-						"Authorization": "Basic " + credentials
+						"Authorization": "Bearer " + this.config.auth_token
 					}
 				});
 			}

@@ -3,4 +3,5 @@
 *.tmproj
 *.sublime-workspace
 .project
+.grunt
 node_modules

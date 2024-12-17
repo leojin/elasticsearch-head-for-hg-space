@@ -15,11 +15,10 @@
 				// XHR request fails if the URL is not ending with a "/"
 				this.base_uri += "/";
 			}
-			if( this.config.auth_user ) {
-				var credentials = window.btoa( this.config.auth_user + ":" + this.config.auth_password );
+			if( this.config.auth_token ) {
 				$.ajaxSetup({
 					headers: {
-						"Authorization": "Basic " + credentials
+						"Authorization": "Bearer " + this.config.auth_token
 					}
 				});
 			}

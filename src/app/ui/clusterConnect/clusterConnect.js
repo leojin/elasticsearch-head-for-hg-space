@@ -38,8 +38,7 @@
 			}, {});
 			$("body").empty().append(new app.App("body", { id: "es",
 				base_uri: url,
-			 	auth_user : args["auth_user"] || "",
-			 	auth_password : args["auth_password"] || ""
+			 	auth_token : args["auth_token"] || ""
 			}));
 		},
 
